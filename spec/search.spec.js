@@ -1,4 +1,4 @@
-import { expect } from "chai";
+import { assert } from "chai";
 
 describe("Sandbox", () => {
   before(() => {
@@ -9,9 +9,9 @@ describe("Sandbox", () => {
     const title = await browser.getTitle();
     const header = element(by.css("h1"));
 
-    expect(title).to.equal("Sandbox");
+    assert.strictEqual(title, "Sandbox");
     header.getText().then((h) => {
-      expect(h).to.equal("Sandbox");
+      assert.strictEqual(h, "Sandbox");
     });
   });
 }).timeout(20000);
